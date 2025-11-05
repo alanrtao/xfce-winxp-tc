@@ -13,3 +13,27 @@
 @import "wintc-taskbuttons";
 @import "xp-start-plugin";
 @import "xp-systray-plugin";
+
+#XfcePanelWindow,
+#xfce-panel {
+  color: white;
+
+  // Background image for the panel
+  background-image: url("../Resources/fake-panel-bg.png");
+  background-repeat: repeat-x;
+  background-size: auto;
+  background-position: center;
+}
+
+#whiskermenu-button {
+  border: none;
+  background-color: transparent;
+
+  image {
+    // Override theme icon with a local file
+    background-image: url('../Resources/fake-start-button.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

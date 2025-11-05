@@ -278,13 +278,15 @@ else
 fi
 
 # Check system deps
-#
 "${SH_CHKDEPS}" -c "${OPT_BUILDLIST}" -l
 
 if [[ $? -gt 0 ]]
 then
-    echo "buildall: Dependencies check unsatisfied or failed." >&2
-    exit 1
+    echo "WARNING: the above packages appear to be missing. Please check if you have installed an equivalent package before proceeding"
+    read -p "proceed? (yes/no): " ans
+    if [[ $ans != 'yes' ]]; then
+        exit 1
+    fi
 fi
 
 # Building the whole thing
