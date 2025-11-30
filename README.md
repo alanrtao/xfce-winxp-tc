@@ -19,6 +19,9 @@ The following steps detail how to start from a box standard OpenSUSE (Tumbleweed
   - Firefox: open Firefox, on the top area right click and "customize toolbar", on the bottom left of the page there should be an option to turn on the title bar (and also a separate menu bar)
     - [this theme](https://addons.mozilla.org/en-US/firefox/addon/xp-classic-theme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) looks pretty nice in combination with the default bar
     - Change font to Tahoma
+
+  - VSCode: `Ctrl + ,` and look up "title bar style", select native.
+    - [this theme](https://marketplace.visualstudio.com/items?itemName=sinedied.vscode-windows-xp-theme) works.
   
 
 - Other stuff:
