@@ -8,19 +8,21 @@ The following steps detail how to start from a box standard OpenSUSE (Tumbleweed
 - `sudo rpm -i $BUILD_DIR/*` if you just want one time install
   - If you built again and want to replace, use `sudo rpm -Uvh --replacepkgs $BUILD_DIR/*`
 
+  > For dev, do `gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true` and then ctrl + shift + I to vieww
+
 - The installation should only add themes without actually switching them on. Use the following to actually use them:
   > https://github.com/rozniak/xfce-winxp-tc/wiki/Manual-configuration-following-install
 
-  - For the task bar, instead of using this project's implementation [here](./shell/taskband/), just use [a texture reskin](./hack/) instead in the panel setting and start menu settings.
-
-  - While there were icons in the project, I personally prefer the [BlueCurve](https://www.gnome-look.org/p/1167536) icon theme. To install: download and extract the archive, create a folder called `~/.icons` if it doesn't already exist, and move the extrated folder into `.icons`. Then go back to appearance settings and switch icon theme.
+  - For the task bar, instead of using this project's implementation [here](./shell/taskband/), just use [a texture reskin](./hack/) instead in the panel setting and start menu settings. Do set the task bar height to 26px (28px - 1px on each end for the item border)
 
 - While regular GTK and XFWM themes have been installed, "certain other" applications may still not be adopting them
   - Firefox: open Firefox, on the top area right click and "customize toolbar", on the bottom left of the page there should be an option to turn on the title bar (and also a separate menu bar)
     - [this theme](https://addons.mozilla.org/en-US/firefox/addon/xp-classic-theme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) looks pretty nice in combination with the default bar
     - Change font to Tahoma
   
-  - VSCode:  
+
+- Other stuff:
+  - Set Super + Shift + S to `xfce4-screenshooter -r -c` (select region and save to clipboard)
 
 > BELOW IS THE ORIGINAL README
 

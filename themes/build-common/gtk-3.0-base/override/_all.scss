@@ -14,15 +14,14 @@
 @import "xp-start-plugin";
 @import "xp-systray-plugin";
 
-#XfcePanelWindow,
-#xfce-panel {
+// row size must be 26!!!
+#XfcePanelWindow {
   color: white;
+  border: none;
 
   // Background image for the panel
   background-image: url("../Resources/fake-panel-bg.png");
   background-repeat: repeat-x;
-  background-size: auto;
-  background-position: center;
 }
 
 #whiskermenu-button {
@@ -31,9 +30,56 @@
 
   image {
     // Override theme icon with a local file
-    background-image: url('../Resources/fake-start-button.png');
+    background-image: url('../Resources/start_flag.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
+}
+#whiskermenu-window {
+  background: #3282e4;
+}
+
+#whiskermenu-window frame,
+#whiskermenu-window frame > border {
+  border: none;
+  outline: none;
+}
+
+#whiskermenu-window .title-area {
+  padding-top: 12px;
+  color: white;
+  text-shadow: 0 2px 4px #373738;
+  font-size: large;
+}
+
+#whiskermenu-window .contents {
+  background-clip: padding-box;
+  background-color: #95bdee;
+  border-top: solid 2px #ff8a1b;
+}
+
+#whiskermenu-window .categories {
+  padding: 8px;
+	background: #d3e5fa;
+	color: #0a246a;
+}
+
+#whiskermenu-window .launchers {
+  border-radius: 1px;
+	color: #373738;
+  background: white;
+}
+#whiskermenu-window .launchers-pane {
+  border: none;
+}
+
+
+#whiskermenu-window .launchers:hover {
+	background: #d3e5fa;
+	color: #0a246a;
+}
+
+#whiskermenu-window .profile-picture {
+  padding: 4px;
 }
