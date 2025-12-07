@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name[en_US]=Windows XP Style (Blue)
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Windows XP Style (Blue)
+MetacityTheme=Windows XP Style (Blue)
+ButtonLayout=:minimize,maximize,close

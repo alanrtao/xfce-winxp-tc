@@ -1,10 +1,11 @@
 # OpenSUSE XFCE XP Look
 
-The following steps detail how to start from a box standard OpenSUSE (Tumbleweed) XFCE image and get to at least a look-alike of box standard XP. The upstream repo supports way more than what's outlined below run (`find . -name "CMakeLists.txt"` to list all features)
+The following steps detail how to start from a box standard OpenSUSE (Tumbleweed) image with Mate desktop installed, and get to at least a look-alike of box standard XP. The upstream repo supports way more than what's outlined below run (`find . -name "CMakeLists.txt"` to list all features)
 
-- Install build prereqs as listed [here](./packaging/README.MD#tldr-on-building), as well as `sassc`, `xcursorgen`, `rpm-build`, `ruby3.4-rubygem-sass`, `python3-virtualenv`
+- Install build prereqs as listed [here](./packaging/README.MD#tldr-on-building), as well as `sassc`, `xcursorgen`, `rpm-build`, `python3-virtualenv`
 - `export BUILD_DIR='xptc'`
 - `mkdir -p $BUILD_DIR && ./packaging/buildall.sh -c basic.txt -o $BUILD_DIR` (you can swap out xptc for any directory name, this saves your build outputs there)
+  > Make sure `basic.txt` is terminated with a new line, or else the last entry won't be read...
 - `sudo rpm -i $BUILD_DIR/*` if you just want one time install
   - If you built again and want to replace, use `sudo rpm -Uvh --replacepkgs $BUILD_DIR/*`
 
@@ -18,13 +19,66 @@ The following steps detail how to start from a box standard OpenSUSE (Tumbleweed
 - While regular GTK and XFWM themes have been installed, "certain other" applications may still not be adopting them
   - Firefox: open Firefox, on the top area right click and "customize toolbar", on the bottom left of the page there should be an option to turn on the title bar (and also a separate menu bar)
     - [this theme](https://addons.mozilla.org/en-US/firefox/addon/xp-classic-theme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) looks pretty nice in combination with the default bar
-    - Change font to Tahoma
-
-  - VSCode: `Ctrl + ,` and look up "title bar style", select native.
-    - [this theme](https://marketplace.visualstudio.com/items?itemName=sinedied.vscode-windows-xp-theme) works.
   
+  - Neofetch (why of course, the most important application of them all)
+    - `alias neofetch='/usr/bin/neofetch --ascii_distro windows'
+
+  - Terminal (ref: https://www.allidylls.com/poetry/o/spectra.html)
+    - Background: 象牙 HEX: #FFFBF0
+    - ANSI replacements:
+      1. 乌黑 HEX: #392F41
+      2. 赫赤 HEX: #C91F37
+      3. 松绿 HEX: #057748
+      4. 昏黄 HEX: #C89B40
+      5. 靛蓝 HEX: #065279
+      6. 黛螺 HEX: #4A4266
+      7. 蓝色 HEX: #44CEF6
+      8. 花白 HEX: #C2CCD0
+      9. 墨色 HEX: #50616D
+      10. 嫣红 HEX: #EF7A82
+      11. 柏绿 HEX: #21A675
+      12. 鹅黄 HEX: #FFF143
+      13. 靛青 HEX: #177CB0
+      14. 丁香 HEX: #CCA4E3
+      15. 蔚蓝 HEX: #70F3FF
+      16. 雪白 HEX: #F0FCFF
+    
+  - VSCode:
+    ```json
+    {
+      "window.titleBarStyle": "native",
+      "editor.fontFamily": "'PT Mono', 'Droid Sans Mono', 'monospace', monospace",
+      "workbench.colorCustomizations": {
+          "terminal.foreground": "#392F41",
+          "terminal.background": "#FFFBF0",
+          "terminal.ansiBlack": "#392F41",
+          "terminal.ansiRed": "#C91F37",
+          "terminal.ansiGreen": "#057748",
+          "terminal.ansiYellow": "#C89B40",
+          "terminal.ansiBlue": "#065279",
+          "terminal.ansiPurple": "#4A4266",
+          "terminal.ansiCyan": "#44CEF6",
+          "terminal.ansiWhite": "#C2CCD0",
+          "terminal.ansiBrightBlack": "#50616D",
+          "terminal.ansiBrightRed": "#EF7A82",
+          "terminal.ansiBrightGreen": "#21A675",
+          "terminal.ansiBrightYellow": "#FFF143",
+          "terminal.ansiBrightBlue": "#177CB0",
+          "terminal.ansiBrightPurple": "#CCA4E3",
+          "terminal.ansiBrightCyan": "#70F3FF",
+          "terminal.ansiBrightWhite": "#F0FCFF",
+      }
+    }
+    ```
 
 - Other stuff:
+  - Desktop & Panel shortcuts:
+    - In "preferred applications", change system/file manager to thunar, and in Mate Tweaks add the "home" and "trash" desktop icons
+    - VSCode (icon under `luna/blue/apps/preferences-desktop-keyboard.png`)
+    - Mail (icon under `luna/blue/apps/thunderbird.png`): `firefox --new-tab "<link to your email>"`
+    - Discord (icon under `luna/blue/actions/windows-messenger.png`)
+    - Mate terminal & Mate System Monitor
+
   - Set Super + Shift + S to `xfce4-screenshooter -r -c` (select region and save to clipboard)
 
 > BELOW IS THE ORIGINAL README

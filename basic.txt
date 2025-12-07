@@ -2,3 +2,4 @@ themes/luna/blue
 fonts
 cursors/no-shadow/standard
 sounds
+icons/luna
